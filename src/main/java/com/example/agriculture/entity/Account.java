@@ -1,5 +1,7 @@
 package com.example.agriculture.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
 import io.swagger.annotations.ApiModel;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -19,7 +21,8 @@ import java.io.Serializable;
 @ApiModel(value="Account对象", description="")  // 这4行注解不写的话，就必须要显式注明get set函数
 public class Account implements Serializable {
     private static final long serialVersionUID = -90144189419165190L;
-    
+
+    @TableId(value = "id", type = IdType.AUTO)  // 不加这一行，注册新用户到数据库的时候，Account实体里不填id会报错： argument type mismatch
     private Integer id;
     /**
      * 用户ID

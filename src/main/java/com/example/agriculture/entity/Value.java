@@ -18,13 +18,19 @@ import lombok.experimental.Accessors;
 @Accessors(chain = true)
 @ApiModel(value="Value对象", description="")  // 这4行注解不写的话，就必须要显式注明get set函数
 public class Value {
+
+    @TableId  // 主键，就设备ID这一列。别设置复合主键给自己找事了
     private String id;
 
-    private Float temp;
+    private String areaId;
 
-    private Float humi;
+    private String description;
 
-    private String motor;
+    private Float tempMax;
 
-    private String valve;
+    private Float humiMax;
+
+    private Float tempMin;
+
+    private Float humiMin;
 }

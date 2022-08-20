@@ -25,8 +25,9 @@ import lombok.experimental.Accessors;
 public class History implements Serializable {
     private static final long serialVersionUID = -59072359117180265L;
 
-    @TableId()
-    private Date recordTime;
+    @TableId   // 这个注解表示主键
+    private String recordTime;  // 这个不要用Date类型，会变成一长串的格林尼治时间。
+                                // 用string的话就是正常的数据库里存储的信息
 
     private String equipmentId;
     

@@ -1,6 +1,6 @@
 # 服务端口
 server:
-  port: 8002
+  port: 8004
 # 服务名(cloud)
 #spring.application.name=user
 
@@ -21,7 +21,7 @@ spring:
 mybatis-plus:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
-  mapper-locations: classpath:**/mapper/xml/*.xml
+  mapper-locations: classpath:**/mapper/xml/*.xml # 这个是最重要的一句，没有这句，识别不出mapper.xml文件，启动时候控制台会报“找不到”
 
 
 
